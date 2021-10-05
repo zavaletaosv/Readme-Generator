@@ -86,8 +86,9 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer.prompt(questions).then((inquirerResponses) => {
         writeToFile('READMEEX.md', generateMarkdown({... inquirerResponses}));
+        console.log('Your README.md has been generated.')
     });
-    console.log('Your README.md has been generated.')
+
 }
 
 // Function Call to Initialize App
