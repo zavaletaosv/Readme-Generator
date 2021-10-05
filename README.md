@@ -7,7 +7,7 @@ This project was designed to allow users to create a high quality README for the
 
 Repository Link: https://github.com/zavaletaosv/Readme-Generator 
 
-Deployed Website Link: 
+Video Link: https://drive.google.com/file/d/1TZuF8wZxMa1XBemuxCfDMl6M_860kz7k/view
 ## Usage
 
 Once deployed, the application appears as the image attached below on a traditional desktop.
