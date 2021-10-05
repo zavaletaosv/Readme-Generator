@@ -9,6 +9,18 @@ const questions = [
 
     {
         type: 'input',
+        name: 'name',
+        message: 'What is your name? Please enter in your first and last name.'
+    },
+
+    {
+        type: 'input',
+        name: 'year',
+        message: 'What is the current year? Please enter in the year (YYYY).'
+    },
+
+    {
+        type: 'input',
         name: 'github',
         message: 'What is your GitHub username? Please enter in your GitHub username.'
     },
