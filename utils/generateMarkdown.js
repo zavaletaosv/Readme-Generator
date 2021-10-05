@@ -250,6 +250,11 @@ function renderLicenseSection(license, name, year) {
                     This Source Code Form is “Incompatible With Secondary Licenses”, as defined by the Mozilla Public License, v. 2.0.`
             break;
 
+            default: ''
+            break;
+    }
+}
+
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
