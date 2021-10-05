@@ -42,7 +42,7 @@ function renderLicenseLink(license) {
             break;
 
         case 'Mozilla Public License 2.0':
-            return'(https://opensource.org/licenses/MPL-2.0)'
+            return '(https://opensource.org/licenses/MPL-2.0)'
             break;
 
         default: ''
@@ -65,8 +65,8 @@ function renderLicenseSection(license, name, year) {
             THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.`
             break;
 
-            case 'Apache License 2.0':
-                return `Copyright ${year} ${name}
+        case 'Apache License 2.0':
+            return `Copyright ${year} ${name}
     
                     Licensed under the Apache License, Version 2.0 (the "License");
                     you may not use this file except in compliance with the License.
@@ -79,10 +79,10 @@ function renderLicenseSection(license, name, year) {
                     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
                     See the License for the specific language governing permissions and
                     limitations under the License.`
-                break;
+            break;
 
-                case 'GNU GPLv3':
-                    return `Copyright (C) ${year}  ${name}
+        case 'GNU GPLv3':
+            return `Copyright (C) ${year}  ${name}
         
                         This program is free software: you can redistribute it and/or modify
                         it under the terms of the GNU General Public License as published by
@@ -96,9 +96,9 @@ function renderLicenseSection(license, name, year) {
                     
                         You should have received a copy of the GNU General Public License
                         along with this program.  If not, see <https://www.gnu.org/licenses/>.`
-                    break;
+            break;
 
-                    case 'Mozilla Public License 2.0':
+        case 'Mozilla Public License 2.0':
             return `1. Definitions
                     1.1. “Contributor”
                     means each individual or legal entity that creates, contributes to the creation of, or owns Covered Software.
@@ -250,16 +250,53 @@ function renderLicenseSection(license, name, year) {
                     This Source Code Form is “Incompatible With Secondary Licenses”, as defined by the Mozilla Public License, v. 2.0.`
             break;
 
-            default: ''
+        default: ''
             break;
     }
 }
 
-
-// TODO: Create a function to generate markdown for README
+// Create a Function To Generate Markdown for README
 function generateMarkdown(data) {
-    return `# ${data.title}
+    return `# ${data.title}  
+${renderLicenseBadge(data.license)}
 
+## Description
+${data.description}
+
+## Table of Contents
+
+- [Installation](#Installation)
+- [Usage](#Usage)
+- [License](#License)
+- [Badges](#Badges)
+- [How to Contribute](#How-to-Contribute)
+- [Tests](#Tests)
+- [Questions](#Questions)
+
+## Installation 
+${data.installation}
+
+## Usage 
+${data.usage}  
+
+## License 
+${renderLicenseLink(data.license)}  
+${renderLicenseSection(data.license, data.name, data.year)}
+
+## Badges
+${renderLicenseBadge(data.license)}
+
+## How to Contribute
+${data.contributions}
+
+## Tests
+${data.test}
+
+## Questions
+
+If you have any questions or concerns, feel free to contact me at ${data.email}.
+
+You can also view more of my work at [${data.github}](https://github.com/${data.github}/).
 `;
 }
 
